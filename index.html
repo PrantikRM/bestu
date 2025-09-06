@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Bestu!</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ff4d4d 0%, #cc0000 100%);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 0;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      color: #fff;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 1.5rem;
+      color: #ffdd00;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+      padding: 30px;
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 2;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      text-align: center;
+    }
+
+    .birthday-icon {
+      font-size: 4rem;
+      color: #ffdd00;
+      margin: 10px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .message-section {
+      margin-top: 20px;
+      line-height: 1.8;
+    }
+
+    .message-section h2 {
+      color: #ffdd00;
+      margin-bottom: 20px;
+      font-size: 2rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .message-section p {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .link-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #ffdd00;
+      color: #cc0000;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .link-btn:hover {
+      background: #fff;
+      transform: scale(1.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #ffdd00;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Decorative floating balloons */
+    .balloon {
+      position: absolute;
+      width: 40px;
+      height: 50px;
+      border-radius: 50%;
+      z-index: -1;
+      animation: float 15s infinite;
+    }
+
+    .balloon:before {
+      content: "";
+      position: absolute;
+      width: 5px;
+      height: 15px;
+      background: rgba(255, 255, 255, 0.5);
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 0 0 5px 5px;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) translateX(0); opacity: 0.7; }
+      100% { transform: translateY(-100px) translateX(30px); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating balloons -->
+  <div class="hearts"></div>
+
+  <header>
+    <h1>🎉 Happy Birthday Bestu! 🎂</h1>
+    <p class="subtitle">Celebrating your journey since 1997</p>
+  </header>
+
+  <div class="container">
+    <div>
+      <i class="fas fa-birthday-cake birthday-icon"></i>
+      <i class="fas fa-gift birthday-icon"></i>
+      <i class="fas fa-champagne-glasses birthday-icon"></i>
+    </div>
+
+    <div class="message-section">
+      <h2>To My Dearest Bestu</h2>
+      <p>From the moment you came into this world in 1997, you've been a source of joy and inspiration to everyone around you.</p>
+      <p>Your kindness knows no bounds, your laughter is contagious, and your spirit shines brighter with each passing year.</p>
+      <p>May this year bring you as much happiness as you've given to others throughout your life.</p>
+      <p>With all my love,<br>💖 Your forever admirer 💖</p>
+    </div>
+
+    <!-- Google Drive link button -->
+    <a href="YOUR_GOOGLE_DRIVE_LINK_HERE" target="_blank" class="link-btn">
+      📂 View Memories on Google Drive
+    </a>
+  </div>
+
+  <footer>
+    <p>Created with love for Bestu's special day | 1997 - Forever</p>
+  </footer>
+
+  <script>
+    // Create floating balloons
+    function createBalloons() {
+      const colors = ['#ff4d4d', '#4d79ff', '#4dff4d', '#ffff4d', '#ff4dff', '#4dffff'];
+      const container = document.body;
+
+      for (let i = 0; i < 15; i++) {
+        const balloon = document.createElement('div');
+        balloon.className = 'balloon';
+
+        const size = 30 + Math.random() * 40;
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        const left = Math.random() * 100;
+        const animationDuration = 10 + Math.random() * 20;
+        const animationDelay = Math.random() * 5;
+
+        balloon.style.width = `${size}px`;
+        balloon.style.height = `${size * 1.2}px`;
+        balloon.style.background = color;
+        balloon.style.left = `${left}vw`;
+        balloon.style.animationDuration = `${animationDuration}s`;
+        balloon.style.animationDelay = `${animationDelay}s`;
+
+        container.appendChild(balloon);
+      }
+    }
+
+    window.onload = function() {
+      createBalloons();
+    };
+  </script>
+</body>
+</html>
